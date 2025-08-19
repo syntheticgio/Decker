@@ -1,0 +1,5 @@
+.git
+.gitignore
+c/build
+js/build
+node_modules

@@ -1,0 +1,12 @@
+{
+  "name": "decker-server",
+  "version": "1.0.0",
+  "description": "A simple node server for Decker.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
