@@ -19,13 +19,51 @@ make web-decker
 make runweb      # (optional) open in your default browser
 ```
 
+Web service
+-----------
+Web-decker allows your web browser to point to a local file and run Decker in js.  If you would like to serve Decker, you will need a web service.
+
+You can serve Decker as a web-app by using a node.js server.  You will need node and npx installed.  You will need to install the dependencies and then start the server.
+
+```
+npm i
+npm start
+```
+
+This will start it by default on the 3000 port.  You can change this port in the server.py file (line 5, change the number 3000 to whichever port number you would like.)
+
+Docker
+------
+This file contains instructions for building and running the Decker application in a Docker container.
+
+### Prerequisites
+
+- Docker must be installed on your system.
+
+### Building the Docker Image
+
+To build the Docker image, open a terminal in the root of the project and run the following command. This will build the Docker image and tag it with the name `decker`:
+
+```bash
+docker build -t decker .
+```
+
+### Running the Docker Container
+
+Once the image is built, you can run it as a container with the following command. This will start the container and map port 3000 on your host machine to port 3000 in the container:
+
+```bash
+docker run -p 3000:3000 decker
+```
+
+You should then be able to access Decker in your web browser at http://127.0.0.1:3000/build/decker.html.
 
 Native-Decker
 -------------
 Decker is also available as a native application, written in C. Building Native-Decker from source requires:
 
 - a c compiler and libc
-- the `xxd` utility (standard with MacOS and most \*nix distros)
+- the `xxd` utility (standard with MacOS and most *nix distros)
 - [SDL2](https://www.libsdl.org/download-2.0.php)
 - [SDL2_image](https://github.com/libsdl-org/SDL_image)
 
@@ -117,3 +155,11 @@ The Decker project is released under the MIT license. Any contributions to this 
 - When modifying the C version of Decker, avoid generating warnings and _do not use_ compiler-specific features such as GCC extensions.
 
 Please refrain from submitting Pull Requests to this repository containing new features without first discussing their inclusion in an Issue. Decker is intended to be small, simple, and cozy. There are an infinite number of features that could potentially be added, but creative constraints are also valuable. If you have a differing vision, feel empowered to explore it in your own fork of the project- that's what permissive licenses are for.
+
+
+Contact
+-------
+John Earnest
+<jearnest@gmail.com>
+<http://beyondloom.com>
+
