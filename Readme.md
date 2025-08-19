@@ -58,6 +58,16 @@ docker run -p 3000:3000 decker
 
 You should then be able to access Decker in your web browser at http://127.0.0.1:3000/build/decker.html.
 
+Casa-OS Integration
+-------------------
+You can integrate directly with Casa-OS by using the Decker.yaml file.  In Casa-OS, add a new app (a plus button in the upper right corner of the App section), and select Install a customized app.  In the upper right corner there is a button which allows you to Import.  Select this and load the Decker.yaml file within this repo.  You can modify any of the parameters as needed.  Click Install and after a few moments you should be able to access Decker by clicking on the Decker app that was installed.  You can navagate directly to the URL 
+
+```
+<your IP Address>:3001/decker.hml
+```
+
+Assuming you used the same 3001 mapping as in the yaml file.
+
 Native-Decker
 -------------
 Decker is also available as a native application, written in C. Building Native-Decker from source requires:
