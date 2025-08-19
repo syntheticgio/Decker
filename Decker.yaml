@@ -1,0 +1,40 @@
+name: decker
+services:
+  main_app:
+    cpu_shares: 10
+    command: []
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    image: syntheticgio/decker:latest
+    labels:
+      icon: https://github.com/syntheticgio/Decker/blob/main/icon_256x256.png?raw=true
+    ports:
+      - target: 3000
+        published: "3001"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/decker/files
+        target: /app/files
+    devices: []
+    cap_add: []
+    environment: []
+    network_mode: bridge
+    privileged: false
+    container_name: ""
+    hostname: ""
+x-casaos:
+  author: self
+  category: self
+  hostname: 192.168.1.197
+  icon: https://github.com/syntheticgio/Decker/blob/main/icon_256x256.png?raw=true
+  index: /decker.html
+  is_uncontrolled: false
+  port_map: "3001"
+  scheme: http
+  store_app_id: renewed_tivy
+  title:
+    custom: Decker
